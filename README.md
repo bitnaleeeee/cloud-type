@@ -1,37 +1,96 @@
-## Deploy JSON Server to Vercel
+# node-mock-server
 
-A template to deploy [JSON Server](https://github.com/typicode/json-server) to [Vercel](https://vercel.com), allow you to run fake REST API online!
+> File based Node REST API mock server
 
-Demo from this repository: 
+[![Build status](https://img.shields.io/travis/smollweide/node-mock-server/master.svg)](https://travis-ci.org/smollweide/node-mock-server)
+[![npm](https://badge.fury.io/js/node-mock-server.svg)](https://badge.fury.io/js/node-mock-server)
+[![npm](https://img.shields.io/npm/dt/node-mock-server.svg)](https://www.npmjs.com/package/node-mock-server)
+[![Codestyle](https://img.shields.io/badge/codestyle-namics-green.svg)](https://github.com/namics/eslint-config-namics)
 
-1. https://json-server-in.vercel.app
-2. https://json-server-in.vercel.app/api/posts
+![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/26034363/c509d2c2-38bb-11e7-9175-4a151f7a550f.jpg)
 
-### How to use
+## Getting Started
 
-1. Click "**Use this template**" or clone this repository.
-2. Update or use the default [`db.json`](./db.json) in the repository.
-3. Sign Up or login into [Vercel](https://vercel.com).
-4. From the Vercel dashboard, click "**+ New Project**" then "**Import**" your repository.
-5. In the "**Configure Project**" screen, leave everything default and click "**Deploy**".
-6. Wait until deployment is done, and your own JSON server is ready to serve!
+This application requires Node `6` or higher.
+For Node `<6` please use `node-mock-server@0.22.1`
+For Node `<4` please use `node-mock-server@0.11.0`
 
-## Default `db.json`
+##### 1. Install npm package:
 
-```json
-{
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
-}
+```
+$ npm install node-mock-server --save-dev
 ```
 
-## Reference
+##### 2. Start init process:
 
-1. https://github.com/typicode/json-server
-2. https://vercel.com
-3. https://shadowsmith.com/how-to-deploy-an-express-api-to-vercel
+```
+$ node node_modules/node-mock-server/init
+```
+
+### Options
+
+[node-mock-server options](/doc/readme-options.md)
+
+### Usage examples
+
+[node-mock-server usage examples](/doc/readme-usage-examples.md)
+
+## Features
+
+-   Node.js and file based ([folder structure](/doc/readme-folder-structure.md))
+-   [Node Mock Server UI](/doc/readme-ui-documentation.md)
+-   [Functions in mock data](/doc/readme-mock-functions.md)
+-   [Faker included](/doc/readme-faker.md)
+-   [Query params in mock data](/doc/readme-query-params.md)
+-   [Dynamic path params in mock data](/doc/readme-path-params.md)
+-   [Expected responses](/doc/readme-expected-response.md)
+-   [Middleware responses](/doc/readme-middleware.md)
+-   [Express Middleware](/doc/readme-express-middleware.md)
+-   [Error cases](/doc/readme-expected-response.md)
+-   [Swagger import](/doc/readme-swagger-import.md)
+    -   DTO import
+    -   DTO response function
+-   [Response validation](/doc/readme-response-validation.md)
+-   [Response header](/doc/readme-response-header.md)
+-   [DTO to Class converter](/doc/readme-dto-2-class.md)
+-   [Collections](/doc/readme-collections.md)
+-   [Tunnel](/doc/readme-tunnel.md)
+
+## CLI
+
+```
+$ node <nodeScript> --help
+
+  Usage
+    $ node <nodeScript> [--version] [--help] <command> [<args>]
+
+  Options
+    $                  start mock server
+    $ --version        print node-mock-server version
+    $ --help           print help
+    $ swagger-import   run a swagger import
+    $ validate         run a validation for all mock data
+    $ collections      print all available collections
+    $ collection <id>  activate collection
+
+  Examples
+    $ node demo/index.js --version
+    $ node demo/index.js collections
+```
+
+## Demo
+
+```shell
+git clone https://github.com/smollweide/node-mock-server.git
+cd node-mock-server
+npm install
+node demo
+```
+
+## License
+
+[MIT License](https://github.com/smollweide/node-mock-server/blob/master/LICENSE)
+
+## Changelog
+
+Please see the [Releases](https://github.com/smollweide/node-mock-server/releases)
